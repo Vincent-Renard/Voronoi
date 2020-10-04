@@ -74,7 +74,7 @@ class PriorityQueue:
     def pop(self):
         while self.pq:
             priority, count, item = heapq.heappop(self.pq)
-            if item is not 'Removed':
+            if item != 'Removed':
                 del self.entry_finder[item]
                 return item
         raise KeyError('pop from an empty priority queue')
@@ -82,7 +82,7 @@ class PriorityQueue:
     def top(self):
         while self.pq:
             priority, count, item = heapq.heappop(self.pq)
-            if item is not 'Removed':
+            if item != 'Removed':
                 del self.entry_finder[item]
                 self.push(item)
                 return item
